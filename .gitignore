@@ -1,5 +1,6 @@
-# All data files
+# Data and output files
 data/*
+out/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

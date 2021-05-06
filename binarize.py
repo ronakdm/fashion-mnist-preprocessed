@@ -1,6 +1,7 @@
 import numpy as np
 from utils import KNeighborsClassifierCV
 from sklearn.metrics import confusion_matrix
+import pickle
 
 # Cross-validation hyperparameters
 
@@ -21,10 +22,10 @@ model = KNeighborsClassifierCV(max_n_neighbors=max_n_neighbors, n_splits=n_split
     X_train, y_train
 )
 
-print(model.get_params())
-
+best_params = model.get_params()
 best_confusion_matrix = confusion_matrix(y_test, model.predict(X_test))
 
+pickle.dump(best_params, open("params.p", "rb"))
 with open("confusion_matrix.npy", "wb") as f:
     np.save(f, y_test)
 
