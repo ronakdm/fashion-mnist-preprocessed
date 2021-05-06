@@ -5,9 +5,11 @@ Code to download, featurize, and binarize the Fashion MNIST dataset for easy ben
 
 The code requires Python 3 environment with the following packages.
 ```
-- torchvision
-- scikit-image
 - numpy
+- torchvision
+- scikit-learn
+- scikit-image
+- joblib
 ```
 
 ## Instructions
