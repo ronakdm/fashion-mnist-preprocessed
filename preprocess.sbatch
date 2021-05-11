@@ -12,4 +12,4 @@
 module load Python
 source ../opt/bin/activate
 python featurize.py
-python binarize.py 1 1
+python fit_knn.py 1 1
