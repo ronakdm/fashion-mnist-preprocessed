@@ -1,7 +1,7 @@
 import numpy as np
 
-# confusion_matrix = np.load("confusion_matrix.npy")
-confusion_matrix = np.random.normal(size=(10, 10))
+confusion_matrix = np.load("confusion_matrix.npy")
+# confusion_matrix = np.random.normal(size=(10, 10))
 n_classes = len(confusion_matrix)
 
 # Identify most confusion classes.
