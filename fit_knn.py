@@ -25,7 +25,7 @@ y_train = np.load("data/y_train.npy")
 np.random.seed(123)
 np.random.shuffle(X_train)
 n = len(X_train)
-idx = np.arange(n)[0:int(n * downsample_ratio)]
+idx = np.arange(n)[0 : int(n * downsample_ratio)]
 X_train = X_train[idx, :]
 y_train = y_train[idx]
 
@@ -36,9 +36,9 @@ print(
     % (n_splits, max_n_neighbors)
 )
 
-model = KNeighborsClassifierCV(max_n_neighbors=max_n_neighbors, n_splits=n_splits, verbose=True).fit(
-    X_train, y_train
-)
+model = KNeighborsClassifierCV(
+    max_n_neighbors=max_n_neighbors, n_splits=n_splits, verbose=True
+).fit(X_train, y_train)
 
 print("Loading test data...")
 
@@ -50,7 +50,7 @@ if len(sys.argv) > 2:
 else:
     downsample_ratio = 1
 n = len(X_test)
-idx = np.arange(n)[0:int(n * downsample_ratio)]
+idx = np.arange(n)[0 : int(n * downsample_ratio)]
 
 print("Subsetting test data to %d/%d points..." % (int(n * downsample_ratio), n))
 
@@ -64,7 +64,7 @@ best_confusion_matrix = confusion_matrix(y_test, model.predict(X_test))
 
 pickle.dump(best_params, open("params.p", "wb"))
 with open("confusion_matrix.npy", "wb") as f:
-    np.save(f, y_test)
+    np.save(f, best_confusion_matrix)
 
 # TODO: Most confusing pair of classes.
 # TODO: binarizing data
