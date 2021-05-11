@@ -12,4 +12,4 @@
 module load Python
 source ../opt/bin/activate
 python featurize.py
-python binarize.py 0.2 0.2
+python binarize.py 1 1
