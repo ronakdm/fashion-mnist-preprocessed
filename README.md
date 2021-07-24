@@ -1,5 +1,5 @@
 # fashion-mnist-preprocessed
-Code to download, featurize, and binarize the Fashion MNIST dataset for easy benchmarking.
+Image classification datasets are commonly used for benchmarking ML models. However, this poses a challenge for algorithms that are not inherenetly suited to computer vision or convolutional neural network architectures. Thus, an alternative is to featurize images using pretrained neural networks. An issue with this approach is that representations by these networks such as ResNet50 can make the problem too easy to be descriptive. This repo contains code to download the Fashion MNIST dataset, featurize it using the local binary pattern method from computer vision, and make the problem a binary classification problem using the hardest to distinguish classes in this representation. This affords easy and quick benchmarking.
 
 ## Dependencies
 
